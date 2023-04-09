@@ -17,5 +17,7 @@ The bot uses the yt_dlp library to download audio from YouTube, and the FFmpeg l
 
 For the correct installation of FFmpeg we suggest the use of the following tutorial 
 https://www.youtube.com/watch?v=re_IEwXlcXU
+  
+para la instalacion de la dependencias se sugiere el uso de pip install -r requirements
 
 
