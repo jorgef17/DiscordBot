@@ -16,6 +16,7 @@ The bot uses the command prefix "!" and includes the following commands:
 * !exit: Disconnects from the voice channel.
 * !loop: Toggles loop mode on or off.
 * !play: Plays the current song in the queue.
+
 The bot uses the yt_dlp library to download audio from YouTube, and the FFmpeg library to play the audio. The class is used to download and play the audio, and the list is used to store the songs in the queue. The variable is used to keep track of whether loop mode is enabled. The bot also uses the OpenAI API to generate responses to messages sent by users via !chat.
 
 ## Requirements
