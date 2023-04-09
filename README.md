@@ -15,7 +15,7 @@ The bot uses the command prefix "!" and includes the following commands:
 !play: Plays the current song in the queue.
 The bot uses the yt_dlp library to download audio from YouTube, and the FFmpeg library to play the audio. The class is used to download and play the audio, and the list is used to store the songs in the queue. The variable is used to keep track of whether loop mode is enabled. The bot also uses the OpenAI API to generate responses to messages sent by users via !chat.
 
-For the correct installation of FFmpeg we suggest the use of the following tutorial [Youtube]((https://www.youtube.com/watch?v=re_IEwXlcXU) 
+For the correct installation of FFmpeg we suggest the use of the following tutorial [Youtube](https://www.youtube.com/watch?v=re_IEwXlcXU) 
 
   
 for the installation of the dependencies it is suggested to use pip install -r requirements
