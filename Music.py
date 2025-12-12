@@ -8,7 +8,9 @@ import random
 import pickle
 
 # Intents and settings
+# Voice state intent is required so the bot can join and manage voice channels
 intents = discord.Intents.default()
+intents.guilds = True
 intents.message_content = True
 intents.voice_states = True
 
