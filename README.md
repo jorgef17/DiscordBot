@@ -28,3 +28,6 @@ For the correct installation of FFmpeg on Windows we suggest using the following
   
 for the installation of the dependencies it is suggested to use pip install -r requirements
 
+## Discord intents
+Discord recently made voice state data a privileged intent. Make sure the bot token has the **Message Content** and **Voice State** intents enabled in the [Discord Developer Portal](https://discord.com/developers/applications) so commands like `!play` can join voice channels. Both `Music.py` and `index.py` already request these intents in code.
+

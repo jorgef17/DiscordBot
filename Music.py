@@ -8,7 +8,9 @@ import random
 import pickle
 
 # Intents and settings
+# Voice state intent is required so the bot can join and manage voice channels
 intents = discord.Intents.default()
+intents.guilds = True
 intents.message_content = True
 intents.voice_states = True
 
@@ -73,10 +75,9 @@ class MusicBot(commands.Cog):
             except Exception as e:
                 print(f"Error playing audio: {str(e)}")
                 await ctx.send(f"Error playing audio: {str(e)}")
-        elif not ctx.voice_client.is_playing():
+        elif ctx.voice_client and not ctx.voice_client.is_playing():
             await ctx.send("Queue is empty!")
             print("Queue is empty!")
-            await ctx.voice_client.disconnect()
 
     @commands.command()
     async def play(self, ctx, *, search):
@@ -85,7 +86,9 @@ class MusicBot(commands.Cog):
         if not voice_channel:
             return await ctx.send("You're not in a voice channel!")
         if not ctx.voice_client:
-            await voice_channel.connect()
+            await voice_channel.connect(self_deaf=True)
+        elif ctx.voice_client.channel != voice_channel:
+            await ctx.voice_client.move_to(voice_channel)
 
         async with ctx.typing():
             try:

@@ -12,7 +12,10 @@ import openai
 
 
 intents = discord.Intents.default()
+intents.guilds = True
 intents.message_content = True
+# Voice state intent is required for connecting to and managing voice channels
+intents.voice_states = True
 openai.api_key = 'Token Chatgpt'
 
 bot = commands.Bot(command_prefix="!", intents=intents)
